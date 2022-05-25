@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class mst_products extends Model
 {
     use HasFactory;
+    protected $table = 'mst_products';
+    protected $primaryKey = 'product_id';
+    protected $keyType = 'string';
+    public $timestamps = false;
 }

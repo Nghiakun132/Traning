@@ -1,0 +1,37 @@
+.title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.product-label,.custom-label {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+#btnDeleteFile:hover {
+    background-color: red;
+    color: white;
+
+}
+
+.product-add {
+    padding: 10px;
+    margin: 10px;
+}
+
+#btnSave {
+    padding: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#btnCancelAdd {
+    padding: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.product-add {
+    padding-right: 30px;
+    padding-left: 30px;
+}

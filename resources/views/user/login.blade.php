@@ -39,8 +39,7 @@
                             <div class="col-lg-8">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <img src="{{ asset('images/logo.png') }}" width="200" height="100" alt=""
-                                            class="mb-4">
+                                        <img src="{{ asset('images/logo3.png') }}" alt="">
                                     </div>
                                     <form class="user" action="" method="post">
                                         @csrf
@@ -48,21 +47,21 @@
                                             <input type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email"
                                                 name="email">
+                                            @if ($errors->has('email'))
+                                                <span id="emailError"
+                                                    class="text-danger font-weight-bold">{{ $errors->first('email') }}</span>
+                                            @endif
                                         </div>
-                                        @if ($errors->has('email'))
-                                            <div class="alert alert-danger">
-                                                {{ $errors->first('email') }}
-                                            </div>
-                                        @endif
+
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Mật khẩu" name="password">
+                                            @if ($errors->has('password'))
+                                                <span id="passwordError"
+                                                    class="text-danger font-weight-bold">{{ $errors->first('password') }}</span>
+                                            @endif
                                         </div>
-                                        @if ($errors->has('password'))
-                                            <div class="alert alert-danger">
-                                                {{ $errors->first('password') }}
-                                            </div>
-                                        @endif
+
 
                                         <div class="row">
                                             <div class="col-md-6">
@@ -98,5 +97,18 @@ if ($error) {
     Session::forget('error');
 }
 ?>
+<script>
+    let emailError = document.querySelector('#emailError');
+    let passwordError = document.querySelector('#passwordError');
+    $(document).ready(function() {
+        if (emailError) {
+            $('#exampleInputEmail').css('border', '1px solid red');
+        }
+        if (passwordError) {
+            $('#exampleInputPassword').css('border', '1px solid red');
+        }
+
+    });
+</script>
 
 </html>

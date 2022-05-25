@@ -9,5 +9,5 @@ class mst_users extends Model
 {
     use HasFactory;
     protected $table = 'mst_users';
-
+    public $timestamps = false;
 }
